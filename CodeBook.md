@@ -30,19 +30,23 @@ There are 6 activity labels: LAYING, SITTING, STANDING,  WALKING, WALKING_DOWNST
 
 According to the requirement, only the measurements on the mean and standard deviation for each measurement are remained in the tidy data set. Here, my implementation choice is to keep measurements having strings "mean()" or "std()". Other measurements containing "mean" such as "fBodyBodyGyroJerkMag-meanFreq()" or "gravityMean" are not considered. 
 
-Explanation of variables are listed below. Note that variables starting with "timeDom" indicates that they are computed from the time domain while variables starting with "freqDom" indicates that they are computed from the frequency domain:
+The acceleration signal from the smartphone accelerometer  (variables with *"Acc"*)  in standard gravity units 'g'. For the angular velocity vector measured by the gyroscope (variables with *"Gyro"*), the units are radians/second. Magnitude of three-dimensional signals (variables with *"Mag"*) were calculated using the Euclidean norm.
+
+All measurement data have been normalized so their value is bounded in the interval [-1,1].
+
+Explanation of variables are listed below. Note that variables starting with *"timeDom"* indicates that they are computed from the time domain while variables starting with *"freqDom"* indicates that they are computed from the frequency domain:
 
 * Average body acceleration  (in X and Y and Z direction):
 
-timeDomBodyAccMeanX, timeDomBodyAccMeanY, timeDomBodyAccMeanZ
+- timeDomBodyAccMeanX, timeDomBodyAccMeanY, timeDomBodyAccMeanZ
 
-freqDomBodyAccMeanX,freqDomBodyAccMeanY, freqDomBodyAccMeanZ
+- freqDomBodyAccMeanX,freqDomBodyAccMeanY, freqDomBodyAccMeanZ
 
 * Standard deviation of  body acceleration :
 
-timeDomBodyAccStdX, timeDomBodyAccStdY, timeDomBodyAccStdZ
+- timeDomBodyAccStdX, timeDomBodyAccStdY, timeDomBodyAccStdZ
 
-freqDomBodyAccStdX, freqDomBodyAccStdY, freqDomBodyAccStdZ 
+- freqDomBodyAccStdX, freqDomBodyAccStdY, freqDomBodyAccStdZ 
 
 * Average gravitty acceleration :
 
@@ -51,93 +55,97 @@ freqDomBodyAccStdX, freqDomBodyAccStdY, freqDomBodyAccStdZ
 
 * Standard deviation of gravity acceleration :
 
-timeDomGravityAccStdX, timeDomGravityAccStdY, timeDomGravityAccStdZ 
+- timeDomGravityAccStdX, timeDomGravityAccStdY, timeDomGravityAccStdZ 
 
 * Average body acceleration jerk:
 
-timeDomBodyAccJerkMeanX, timeDomBodyAccJerkMeanY, timeDomBodyAccJerkMeanZ
+- timeDomBodyAccJerkMeanX, timeDomBodyAccJerkMeanY, timeDomBodyAccJerkMeanZ
 
-freqDomBodyAccJerkMeanX, freqDomBodyAccJerkMeanY, freqDomBodyAccJerkMeanZ 
+- freqDomBodyAccJerkMeanX, freqDomBodyAccJerkMeanY, freqDomBodyAccJerkMeanZ 
 
 * Standard deviation of body acceleration jerk:
 
-timeDomBodyAccJerkStdX, timeDomBodyAccJerkStdY, timeDomBodyAccJerkStdZ 
+- timeDomBodyAccJerkStdX, timeDomBodyAccJerkStdY, timeDomBodyAccJerkStdZ 
 
-freqDomBodyAccJerkStdX, freqDomBodyAccJerkStdY, freqDomBodyAccJerkStdZ 
+- freqDomBodyAccJerkStdX, freqDomBodyAccJerkStdY, freqDomBodyAccJerkStdZ 
 
 
 * Average body angular velocity:
 
-timeDomBodyGyroMeanX, timeDomBodyGyroMeanY, timeDomBodyGyroMeanZ 
+- timeDomBodyGyroMeanX, timeDomBodyGyroMeanY, timeDomBodyGyroMeanZ 
 
-freqDomBodyGyroMeanX, freqDomBodyGyroMeanY, freqDomBodyGyroMeanZ 
+- freqDomBodyGyroMeanX, freqDomBodyGyroMeanY, freqDomBodyGyroMeanZ 
 
 * Standard deviation of body angular velocity:
 
-timeDomBodyGyroStdX, timeDomBodyGyroStdY, timeDomBodyGyroStdZ
+- timeDomBodyGyroStdX, timeDomBodyGyroStdY, timeDomBodyGyroStdZ
 
-freqDomBodyGyroStdX, freqDomBodyGyroStdY, freqDomBodyGyroStdZ 
+- freqDomBodyGyroStdX, freqDomBodyGyroStdY, freqDomBodyGyroStdZ 
 
 * Average body angular velocity jerk:
 
-timeDomBodyGyroJerkMeanX, timeDomBodyGyroJerkMeanY, timeDomBodyGyroJerkMeanZ 
+- timeDomBodyGyroJerkMeanX, timeDomBodyGyroJerkMeanY, timeDomBodyGyroJerkMeanZ 
 
 * Standard deviation of body angular velocity jerk:
 
-timeDomBodyGyroJerkStdX, timeDomBodyGyroJerkStdY, timeDomBodyGyroJerkStdZ 
+- timeDomBodyGyroJerkStdX, timeDomBodyGyroJerkStdY, timeDomBodyGyroJerkStdZ 
 
 * Average magnitude of body acceleration:
 
-timeDomBodyAccMagMean
+- timeDomBodyAccMagMean
 
-freqDomBodyAccMagMean 
+- freqDomBodyAccMagMean 
 
 * Standard deviation of  magnitude of body acceleration:
 
-timeDomBodyAccMagStd
+- timeDomBodyAccMagStd
 
-freqDomBodyAccMagStd 
+- freqDomBodyAccMagStd 
 
 * Average magnitude of gravity acceleration:
 
-timeDomGravityAccMagMean 
+- timeDomGravityAccMagMean 
 
 * Standard deviation of magnitude of gravity acceleration:
 
-timeDomGravityAccMagStd
+- timeDomGravityAccMagStd
 
 * Average magnitude of body acceleration jerk:
 
-timeDomBodyAccJerkMagMean
+- timeDomBodyAccJerkMagMean
 
-freqDomBodyBodyAccJerkMagMean 
+- freqDomBodyBodyAccJerkMagMean 
 
 * Standard deviation of magnitude of body acceleration jerk:
-timeDomBodyAccJerkMagStd 
+ 
+- timeDomBodyAccJerkMagStd 
 
-freqDomBodyBodyAccJerkMagStd 
+- freqDomBodyBodyAccJerkMagStd 
 
 
 * Average magnitude of body angular velocity:
-timeDomBodyGyroMagMean 
 
-freqDomBodyBodyGyroMagMean
+- timeDomBodyGyroMagMean 
+
+- freqDomBodyBodyGyroMagMean
 
 * Standard deviation of body angular velocity:
-timeDomBodyGyroMagStd 
 
-freqDomBodyBodyGyroMagStd 
+- timeDomBodyGyroMagStd 
+
+- freqDomBodyBodyGyroMagStd 
 
 * Average magnitude of body angular velocity jerk:
-timeDomBodyGyroJerkMagMean 
 
-freqDomBodyBodyGyroJerkMagMean
+- timeDomBodyGyroJerkMagMean 
+
+- freqDomBodyBodyGyroJerkMagMean
 
 * Standard deviation of body angular velocity jerk:
 
-timeDomBodyGyroJerkMagStd 
+- timeDomBodyGyroJerkMagStd 
 
-freqDomBodyBodyGyroJerkMagStd
+- freqDomBodyBodyGyroJerkMagStd
 
 
 
