@@ -1,3 +1,12 @@
+#download and unzip data
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+if (!file.exists("HARDataset.zip")) {
+  download.file(url, dest="HARDataset.zip", mode = "wb")
+}
+if (!file.exists("HARDataset")) {
+  unzip("HARDataset.zip")
+}
+
 #read features
 features <- read.table("./UCI HAR Dataset/features.txt", sep= " ",
                       col.names=c("featureid","featurename"))
@@ -48,13 +57,28 @@ bindTestTrainSubjects <- append(unlist(trainsubjects, use.names=FALSE)
 
 #bindAllTest is the data set for step 4 
 bindAllTest <- cbind(bindTestTrainSubjects,bindTestTrainY,bindTestTrainX)
-colnames(bindAllTest)[1] <- "subjectid"
-colnames(bindAllTest)[2] <- "activityname"
+colnames(bindAllTest)[1] <- "subject"
+colnames(bindAllTest)[2] <- "activity"
+
+#clean up names
+#remove "()" and "-"
+colnames(bindAllTest) <- gsub("-", "", colnames(bindAllTest))
+colnames(bindAllTest) <- gsub("\\(\\)", "", colnames(bindAllTest))
+#change f and t to more descriptive names 
+colnames(bindAllTest) <- gsub("^f", "freqDom", colnames(bindAllTest))
+colnames(bindAllTest) <- gsub("^t", "timeDom", colnames(bindAllTest))
+#captitalize "mean" and "std"
+colnames(bindAllTest) <- gsub("mean", "Mean", colnames(bindAllTest))
+colnames(bindAllTest) <- gsub("std", "Std", colnames(bindAllTest))
+
 
 #tidy data for step 5
-tidydata <- aggregate(bindAllTest[,seq(3,length(names(bindAllTest)))], list(bindAllTest$subjectid,bindAllTest$activityname),mean)
-colnames(tidydata)[1] <- "subjectid"
-colnames(tidydata)[2] <- "activityname"
-write.table(tidydata, file = "./UCI HAR Dataset/tidydata.txt", row.names = FALSE, col.names = TRUE)
+tidydata <- aggregate(bindAllTest[,seq(3,length(names(bindAllTest)))], list(bindAllTest[[1]],bindAllTest[[2]]),mean)
+#rename of the first and second columns to subject and activity 
+colnames(tidydata)[1] <- "subject"
+colnames(tidydata)[2] <- "activity"
+tidydata <- tidydata[order(tidydata$subject),]
+
+write.table(tidydata, file = "./UCI HAR Dataset/tidydata.txt", row.names = FALSE, col.names = TRUE, quote = FALSE)
 
 

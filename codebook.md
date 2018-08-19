@@ -1,13 +1,5 @@
-# Getting and Cleaning the Assignment
+# Cook Book for Getting and Cleaning Assignment
 
-The repository is for assignment 4 for Getting and Cleaning Data Coursera course. There are four files in this repository
-
-* README.md:            introduction to the repository and explanation of the script
-* run_analysis.R:          source code of the script
-* codebook.md:           explanation of the calculated data
-* tidydataset.txt:          tidy data set for step 5
-
-## Project objective
 
 This goal of this project is to read and clean a data set for later analysis. The data was collected from 30 volunteers who performed   
 six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone. 
@@ -24,9 +16,8 @@ The objective of the project is to write a script doing the following things:
 
 ## Introduction to the analysis script
 
-The script is in the file run_analysis.R. 
+The script is in the file run_analysis.R. Before running the script, you should download the data as a zip file and unzip it in the working directory of R. The script does the following things step by step:
 
-* Download the data as a zip file and unzip it in the working directory of R
 * Read features and activity labels into the environment
 * Read subjects, X and Y respectively from the test folder as *testsubjects*, *testX* and *testY*
 * Rename column names in *testX* and *testY* according to the feature and activity names
@@ -36,7 +27,6 @@ The script is in the file run_analysis.R.
 * Bind rows of *testY* and *trainY* as *bindTestTrainY*
 * Bind rows of *testsubjects* and *trainsubjects* as *bindTestTrainSubjects*
 * Bind columns of *bindTestTrainSubjects*,*bindTestTrainY* and *bindTestTrainX* following the order: subject, activity name and features; the name of the binded data is *bindAllTest*
-* Change column names to more descriptive ones
 * Create a second, independent tidy data set from *bindAllTest* with the average of each variable for each activity and each subject
 * Write the tidy data set as the file *tidydata.txt*
 
