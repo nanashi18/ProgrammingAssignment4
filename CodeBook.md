@@ -46,7 +46,7 @@ freqDomBodyAccStdX, freqDomBodyAccStdY, freqDomBodyAccStdZ
 
 * Average gravitty acceleration :
 
-timeDomGravityAccMeanX, timeDomGravityAccMeanY, timeDomGravityAccMeanZ 
+** timeDomGravityAccMeanX, timeDomGravityAccMeanY, timeDomGravityAccMeanZ 
 
 
 * Standard deviation of gravity acceleration :
@@ -134,6 +134,7 @@ timeDomBodyGyroJerkMagMean
 freqDomBodyBodyGyroJerkMagMean
 
 * Standard deviation of body angular velocity jerk:
+
 timeDomBodyGyroJerkMagStd 
 
 freqDomBodyBodyGyroJerkMagStd
