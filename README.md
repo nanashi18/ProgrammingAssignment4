@@ -4,7 +4,7 @@ The repository is for assignment 4 for Getting and Cleaning Data Coursera course
 
 * README.md:            introduction to the repository and explanation of the script
 * run_analysis.R:          source code of the script
-* codebook.md:           explanation of the calculated data
+* CodeBook.md:           explanation of the calculated data
 * tidydata.txt:          tidy data set for step 5
 
 ## Project objective
