@@ -46,7 +46,7 @@ freqDomBodyAccStdX, freqDomBodyAccStdY, freqDomBodyAccStdZ
 
 * Average gravitty acceleration :
 
-** timeDomGravityAccMeanX, timeDomGravityAccMeanY, timeDomGravityAccMeanZ 
+  - timeDomGravityAccMeanX, timeDomGravityAccMeanY, timeDomGravityAccMeanZ 
 
 
 * Standard deviation of gravity acceleration :
