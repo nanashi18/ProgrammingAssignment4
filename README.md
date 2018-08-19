@@ -1,4 +1,4 @@
-# Getting and Cleaning the Assignment
+# Getting and Cleaning Assignment
 
 The repository is for assignment 4 for Getting and Cleaning Data Coursera course. There are four files in this repository
 
